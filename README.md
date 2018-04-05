@@ -143,9 +143,7 @@ Lives in New York, NY.
 
 -Happy hour.
 
--Hitting the town.
-
--reading the Bible  
+-Fun mobile games.
 
 
 ##### Dislikes  
@@ -155,28 +153,30 @@ Lives in New York, NY.
 -Technology that is not intuitive.  
 
 
-
 ### MVP User Stories  
 ***  
 
-<!-- As a user, I should be able to see a random verse on the screen.  
+As a user I should be able to move the main bubble around.
 
-As a user, I should be able to select what section and book or chapter or verse I believe the verse belongs to.  
+..be able to see other bubbles rendered.
 
-As a user, I should be able to get feedback on whether or not my guess was correct.  
+..be able to absorb other like-color bubbles.
 
-As a user, I should be able to see what the correct answer was.  
+..be able to win the game once all like-colored bubbles are absorbed.
 
-As a user, I should see my overall score update depending on the accuracy of my guess. -->
 
 ### Stretch Goals User Stories
 ***
 
-<!-- As a user, I should have an option to see the surrounding verses so it is easier to guess
+As a user I should see my bubble grow as I absorb them.
 
-As a user, I should be able to choose a difficulty level.  For instance at an easier level you get feedback as you guess as to whether or not you are on the right track.  So if you select the wrong section the drop down box has a red glow around it.
+..see all the bubbles moving at random.
 
-As a user, I can play this game with a friend where we both have separate dropdown menus to make our guesses. -->
+..see animations when my bubble absorbs others.
+
+..see more bubbles as the difficulty progresses.
+
+..see a beautiful UI.
 
 
 <!-- Objective
