@@ -1,5 +1,5 @@
 
-![alt text](https://imgur.com/a/FvAUu "Bubbles")
+![alt text](https://imgur.com/BGTy3I1 "Bubbles")
 
 Here's our logo (hover to see the title text):
 
