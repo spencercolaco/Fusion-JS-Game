@@ -179,8 +179,8 @@ As a user, I should be able to choose a difficulty level.  For instance at an ea
 As a user, I can play this game with a friend where we both have separate dropdown menus to make our guesses. -->
 
 
-Objective
-  Create a game that is relaxing, yet mentally stimulating, that will provide people a nice break from their day-to-day, but not seek to replace normal 15 minute breaks.
+<!-- Objective
+  Create a game that is relaxing, yet mentally stimulating, that will provide people a nice break from their day-to-day, but not seek to replace normal 15 minute breaks. -->
 
 <!-- Proposal One
   A connect the dots style game with pleasing colors and progressively more challenging levels.
