@@ -1,3 +1,11 @@
+///////////////
+
+// AMOEBA GAME
+
+//////////////
+
+// Render Player
+
 // Get canvas element and define context
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
@@ -32,16 +40,16 @@ function moveSomething(e) {
     }
 
     // Redraws the circle after key is pressed
-    drawCircle();
+    drawPlayer();
 }
 
 // Renders the circle on the canvas
-function drawCircle() {
+function drawPlayer(e) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   // Draws circle
   ctx.beginPath();
-  ctx.arc(playerX, playerY, playerSize, 0, 2 * Math.PI);
+  ctx.arc(playerX, playerY, playerSize, 0, 2 * Math.PI, false);
   ctx.closePath();
 
   // Colors the circle green
@@ -49,5 +57,35 @@ function drawCircle() {
   ctx.fill();
 }
 
-// Renders initial circle 
-drawCircle();
+drawPlayer();
+
+// // Render other bubbles
+// function bubblesPosition() {
+//   var bubblesXval = Math.random() * 450;
+//   var bubblesYval = Math.random() * 450;
+//
+//   // Sanity Check
+//   // console.log(bubblesXval)
+//   // console.log(bubblesYval)
+// }
+
+// bubblesPosition();
+
+// Draws another bubble
+for (i = 0; i < 5; i++) {
+  function drawBubbles() {
+    // ctx.clearRect(0, 0, canvas.width, canvas.height);
+    var bubblesXval = Math.random() * 450;
+    var bubblesYval = Math.random() * 450;
+
+    // Draws circle
+    ctx.beginPath();
+    ctx.arc(bubblesXval, bubblesYval, 5, 0, 2 * Math.PI, false);
+    ctx.closePath();
+
+    // Colors the circle green
+    ctx.fillStyle = 'green';
+    ctx.fill();
+  }
+  drawBubbles();
+}
