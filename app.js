@@ -4,7 +4,7 @@
 
 //////////////
 
-// Render Player
+/// Render Player
 
 // Get canvas element and define context
 var canvas = document.getElementById('canvas');
@@ -17,24 +17,26 @@ window.addEventListener("keydown", moveSomething, false);
 var playerX = 75;
 var playerY = 75;
 var playerSize = 25;
+var velX = 2;
+var velY = 2;
 
 // Adds keycodes to the event listener and moves the circle
 function moveSomething(e) {
     switch(e.keyCode) {
         case 37:
-        playerX -= 2;
+        playerX -= velX;
             // left key pressed
             break;
         case 38:
-        playerY -= 2;
+        playerY -= velY;
             // up key pressed
             break;
         case 39:
-        playerX += 2;
+        playerX += velX;
             // right key pressed
             break;
         case 40:
-        playerY += 2;
+        playerY += velY;
             // down key pressed
             break;
     }
@@ -45,7 +47,7 @@ function moveSomething(e) {
 
 // Renders the circle on the canvas
 function drawPlayer(e) {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0, 0, innerWidth, innerHeight);
 
   // Draws circle
   ctx.beginPath();
@@ -59,21 +61,12 @@ function drawPlayer(e) {
 
 drawPlayer();
 
-// // Render other bubbles
-// function bubblesPosition() {
-//   var bubblesXval = Math.random() * 450;
-//   var bubblesYval = Math.random() * 450;
-//
-//   // Sanity Check
-//   // console.log(bubblesXval)
-//   // console.log(bubblesYval)
-// }
-
-// bubblesPosition();
+/// Render other bubbles
 
 // Draws another bubble
 for (i = 0; i < 5; i++) {
   function drawBubbles() {
+
     // ctx.clearRect(0, 0, canvas.width, canvas.height);
     var bubblesXval = Math.random() * 450;
     var bubblesYval = Math.random() * 450;
