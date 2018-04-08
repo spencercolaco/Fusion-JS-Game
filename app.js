@@ -3,7 +3,8 @@
 // AMOEBA GAME
 
 //////////////
-//testing git branch.
+
+
 /// Render Player
 
 // Get canvas element and define context
@@ -19,6 +20,29 @@ var playerY = 75;
 var playerSize = 25;
 var velX = 2;
 var velY = 2;
+
+
+/// Render other bubbles
+
+// Draws another bubble
+
+  function drawBubbles() {
+
+    for (i = 0; i < 5; i++) {
+    // ctx.clearRect(0, 0, canvas.width, canvas.height);
+    var bubblesXval = Math.random() * 450;
+    var bubblesYval = Math.random() * 450;
+
+    // Draws circle
+    ctx.beginPath();
+    ctx.arc(bubblesXval, bubblesYval, 5, 0, 2 * Math.PI, false);
+    ctx.closePath();
+
+    // Colors the circle green
+    ctx.fillStyle = 'green';
+    ctx.fill();
+  }
+}
 
 // Adds keycodes to the event listener and moves the circle
 function moveSomething(e) {
@@ -49,6 +73,7 @@ function moveSomething(e) {
 function drawPlayer(e) {
   ctx.clearRect(0, 0, innerWidth, innerHeight);
 
+  drawBubbles();
   // Draws circle
   ctx.beginPath();
   ctx.arc(playerX, playerY, playerSize, 0, 2 * Math.PI, false);
@@ -60,25 +85,3 @@ function drawPlayer(e) {
 }
 
 drawPlayer();
-
-/// Render other bubbles
-
-// Draws another bubble
-for (i = 0; i < 5; i++) {
-  function drawBubbles() {
-
-    // ctx.clearRect(0, 0, canvas.width, canvas.height);
-    var bubblesXval = Math.random() * 450;
-    var bubblesYval = Math.random() * 450;
-
-    // Draws circle
-    ctx.beginPath();
-    ctx.arc(bubblesXval, bubblesYval, 5, 0, 2 * Math.PI, false);
-    ctx.closePath();
-
-    // Colors the circle green
-    ctx.fillStyle = 'green';
-    ctx.fill();
-  }
-  drawBubbles();
-}
