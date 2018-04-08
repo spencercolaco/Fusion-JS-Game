@@ -11,6 +11,9 @@
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
 // Listens for keydown
 window.addEventListener("keydown", moveSomething, false);
 
@@ -30,8 +33,8 @@ var velY = 2;
 
     for (i = 0; i < 5; i++) {
     // ctx.clearRect(0, 0, canvas.width, canvas.height);
-    var bubblesXval = Math.random() * 450;
-    var bubblesYval = Math.random() * 450;
+    var bubblesXval = Math.random() * innerWidth;
+    var bubblesYval = Math.random() * innerHeight;
 
     // Draws circle
     ctx.beginPath();
