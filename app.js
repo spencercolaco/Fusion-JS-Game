@@ -64,7 +64,12 @@ for (var i = 0; i < 5; i++) {
 
 
 
-console.log(bubbleArray);
+function checkWinner() {
+  if (bubbleArray.length == 0) {
+    location.reload();
+    // alert('You win! Refresh the page to play again.')
+  }
+}
 
 
 /// Render player + set key codes
@@ -118,6 +123,15 @@ function drawPlayer() {
   // Colors the circle green
   ctx.fillStyle = 'green';
   ctx.fill();
+
+  // Remove bubble when player passes over
+  for (var i = 0; i < bubbleArray.length; i++) {
+    if (playerX + playerSize >= bubbleArray[i].x && playerX - playerSize <= bubbleArray[i].x
+          && playerY + playerSize >= bubbleArray[i].y && playerY - playerSize <= bubbleArray[i].y) {
+          bubbleArray.splice(i, 1);
+    }
+  }
+  checkWinner();
 }
 
 drawPlayer();
