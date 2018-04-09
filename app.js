@@ -1,6 +1,6 @@
 ///////////////
 
-// AMOEBA GAME
+// Fusion GAME
 
 //////////////
 
@@ -9,8 +9,15 @@
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 
+// Sets canvas width
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
+
+// Makes canvas width responsive
+window.addEventListener('resize', function() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
 
 // Listens for keydown
 window.addEventListener("keydown", moveSomething, false);
@@ -52,7 +59,7 @@ function Bubble(x, y, dx, dy, radius) {
 
 var bubbleArray = [];
 
-for (var i = 0; i < 5; i++) {
+for (var i = 0; i < 10; i++) {
   var x = Math.random() * innerWidth;
   var y = Math.random() * innerHeight;
   var radius = 5;
@@ -63,11 +70,11 @@ for (var i = 0; i < 5; i++) {
 // var bubble = new Bubble(200, 3, 3, 30);
 
 
-
+// Check for win condition
 function checkWinner() {
   if (bubbleArray.length == 0) {
-    location.reload();
-    // alert('You win! Refresh the page to play again.')
+    bubbleArray.push(new Bubble(5000, 5000, 0, 0, 0));
+    alert('You win! Refresh the page to play again.');
   }
 }
 
@@ -129,6 +136,7 @@ function drawPlayer() {
     if (playerX + playerSize >= bubbleArray[i].x && playerX - playerSize <= bubbleArray[i].x
           && playerY + playerSize >= bubbleArray[i].y && playerY - playerSize <= bubbleArray[i].y) {
           bubbleArray.splice(i, 1);
+          playerSize += 5;
     }
   }
   checkWinner();
