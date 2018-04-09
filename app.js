@@ -5,8 +5,6 @@
 //////////////
 
 
-/// Render Player
-
 // Get canvas element and define context
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
@@ -17,35 +15,59 @@ canvas.height = window.innerHeight;
 // Listens for keydown
 window.addEventListener("keydown", moveSomething, false);
 
-// Define player x,y and size
-var playerX = 75;
-var playerY = 75;
-var playerSize = 25;
-var velX = 2;
-var velY = 2;
 
-
-/// Render other bubbles
+//// Render other bubbles
 
 // Draws another bubble
 
-  function drawBubbles() {
+function Bubble(x, y, dx, dy, radius) {
+  this.x = x;
+  this.y = y;
+  this.dx = dx;
+  this.dy = dy;
+  this.radius = radius;
 
-    for (i = 0; i < 5; i++) {
-    // ctx.clearRect(0, 0, canvas.width, canvas.height);
-    var bubblesXval = Math.random() * innerWidth;
-    var bubblesYval = Math.random() * innerHeight;
-
-    // Draws circle
+  this.draw = function() {
     ctx.beginPath();
-    ctx.arc(bubblesXval, bubblesYval, 5, 0, 2 * Math.PI, false);
+    ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, false);
     ctx.closePath();
 
     // Colors the circle green
     ctx.fillStyle = 'green';
     ctx.fill();
   }
+//   for (i = 0; i < 5; i++) {
+//   // ctx.clearRect(0, 0, canvas.width, canvas.height);
+//
+//   // Draws circle
+//   ctx.beginPath();
+//   ctx.arc(x, y, 5, 0, 2 * Math.PI, false);
+//   ctx.closePath();
+//
+//   // Colors the circle green
+//   ctx.fillStyle = 'green';
+//   ctx.fill();
+// }
 }
+
+var bubbleArray = [];
+
+for (var i = 0; i < 5; i++) {
+  var x = Math.random() * innerWidth;
+  var y = Math.random() * innerHeight;
+  var radius = 5;
+  var dx = (Math.random() - .05) * 8;
+  var dy = (Math.random() - .05) * 8;
+  bubbleArray.push(new Bubble(x, y, dx, dy, radius));
+}
+// var bubble = new Bubble(200, 3, 3, 30);
+
+
+
+console.log(bubbleArray);
+
+
+/// Render player + set key codes
 
 // Adds keycodes to the event listener and moves the circle
 function moveSomething(e) {
@@ -72,11 +94,22 @@ function moveSomething(e) {
     drawPlayer();
 }
 
+// Define player x,y and size
+var playerX = 75;
+var playerY = 75;
+var playerSize = 25;
+var velX = 20;
+var velY = 20;
+
 // Renders the circle on the canvas
-function drawPlayer(e) {
+function drawPlayer() {
+  requestAnimationFrame(drawPlayer);
   ctx.clearRect(0, 0, innerWidth, innerHeight);
 
-  drawBubbles();
+  for (var i = 0; i < bubbleArray.length; i++) {
+    bubbleArray[i].draw();
+  }
+
   // Draws circle
   ctx.beginPath();
   ctx.arc(playerX, playerY, playerSize, 0, 2 * Math.PI, false);
