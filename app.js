@@ -43,28 +43,27 @@ function Bubble(x, y, dx, dy, radius) {
     ctx.fillStyle = 'green';
     ctx.fill();
   }
-//   for (i = 0; i < 5; i++) {
-//   // ctx.clearRect(0, 0, canvas.width, canvas.height);
-//
-//   // Draws circle
-//   ctx.beginPath();
-//   ctx.arc(x, y, 5, 0, 2 * Math.PI, false);
-//   ctx.closePath();
-//
-//   // Colors the circle green
-//   ctx.fillStyle = 'green';
-//   ctx.fill();
-// }
+  this.update = function() {
+    if (this.x + this.radius > innerWidth || this.x + this.radius < 0) {
+      this.dx = -this.dx;
+    }
+    if (this.y + this.radius > innerHeight || this.y + this.radius < 0) {
+      this.dy = -this.dy;
+    }
+  this.x += this.dx;
+  this.y += this.dy;
+  }
 }
+
 
 var bubbleArray = [];
 
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < 100; i++) {
   var x = Math.random() * innerWidth;
   var y = Math.random() * innerHeight;
   var radius = 5;
-  var dx = (Math.random() - .05) * 8;
-  var dy = (Math.random() - .05) * 8;
+  var dx = (Math.random() - .5) * 3;
+  var dy = (Math.random() - .5) * 3;
   bubbleArray.push(new Bubble(x, y, dx, dy, radius));
 }
 // var bubble = new Bubble(200, 3, 3, 30);
@@ -110,8 +109,8 @@ function moveSomething(e) {
 var playerX = 75;
 var playerY = 75;
 var playerSize = 25;
-var velX = 20;
-var velY = 20;
+var velX = 25;
+var velY = 25;
 
 // Renders the circle on the canvas
 function drawPlayer() {
@@ -120,6 +119,7 @@ function drawPlayer() {
 
   for (var i = 0; i < bubbleArray.length; i++) {
     bubbleArray[i].draw();
+    bubbleArray[i].update();
   }
 
   // Draws circle
@@ -136,7 +136,7 @@ function drawPlayer() {
     if (playerX + playerSize >= bubbleArray[i].x && playerX - playerSize <= bubbleArray[i].x
           && playerY + playerSize >= bubbleArray[i].y && playerY - playerSize <= bubbleArray[i].y) {
           bubbleArray.splice(i, 1);
-          playerSize += 5;
+          playerSize += 1;
     }
   }
   checkWinner();
