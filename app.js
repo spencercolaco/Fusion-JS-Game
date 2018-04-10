@@ -11,7 +11,7 @@ var ctx = canvas.getContext('2d');
 
 // Sets canvas width
 canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.height = window.innerHeight * .90;
 
 // Makes canvas width responsive
 window.addEventListener('resize', function() {
@@ -37,7 +37,7 @@ function Bubble(x, y, dx, dy, radius) {
     ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, false);
     ctx.closePath();
 
-    ctx.fillStyle = 'green';
+    ctx.fillStyle = '#C8C8A9';
     ctx.fill();
   }
   this.update = function() {
@@ -81,7 +81,7 @@ function Antimatter(ax, ay, adx, ady, aradius) {
     ctx.arc(this.ax, this.ay, this.aradius, 0, 2 * Math.PI, false);
     ctx.closePath();
 
-    ctx.fillStyle = 'red';
+    ctx.fillStyle = '#EF4566';
     ctx.fill();
   }
 
@@ -106,8 +106,8 @@ for (var i = 0; i < 2; i++) {
   var ax = Math.random() * innerWidth;
   var ay = Math.random() * innerHeight;
   var aradius = 15;
-  var adx = (Math.random() - .5) * 10;
-  var ady = (Math.random() - .5) * 10;
+  var adx = (Math.random() - .5) * 20;
+  var ady = (Math.random() - .5) * 20;
   antimatterArray.push(new Antimatter(ax, ay, adx, ady, aradius));
 }
 
@@ -173,8 +173,8 @@ function drawPlayer() {
 
   // Render and move red circles
   for (var i = 0; i < antimatterArray.length; i++) {
-    antimatterArray[i].draw();
-    antimatterArray[i].update();
+    // antimatterArray[i].draw();
+    // antimatterArray[i].update();
   }
 
   // Draws circle
@@ -183,7 +183,7 @@ function drawPlayer() {
   ctx.closePath();
 
   // Colors the circle green
-  ctx.fillStyle = 'green';
+  ctx.fillStyle = '#83AE9B';
   ctx.fill();
 
   // Remove bubble when player passes over
