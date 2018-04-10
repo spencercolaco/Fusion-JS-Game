@@ -37,7 +37,12 @@ function Bubble(x, y, dx, dy, radius) {
     ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, false);
     ctx.closePath();
 
-    ctx.fillStyle = '#C8C8A9';
+    // Create gradient
+    var grdTwo = ctx.createRadialGradient(this.x, this.y, this.radius * .5, this.x, this.y, this.radius);
+    grdTwo.addColorStop(0,"#C8C8A9");
+    grdTwo.addColorStop(1,"white");
+
+    ctx.fillStyle = grdTwo;
     ctx.fill();
   }
   this.update = function() {
@@ -81,7 +86,12 @@ function Antimatter(ax, ay, adx, ady, aradius) {
     ctx.arc(this.ax, this.ay, this.aradius, 0, 2 * Math.PI, false);
     ctx.closePath();
 
-    ctx.fillStyle = '#EF4566';
+    // Create gradient
+    var grdThree = ctx.createRadialGradient(this.ax, this.ay, this.aradius * .5, this.ax, this.ay, this.aradius);
+    grdThree.addColorStop(.5,"#EF4566");
+    grdThree.addColorStop(1,"white");
+
+    ctx.fillStyle = grdThree;
     ctx.fill();
   }
 
@@ -173,8 +183,8 @@ function drawPlayer() {
 
   // Render and move red circles
   for (var i = 0; i < antimatterArray.length; i++) {
-    // antimatterArray[i].draw();
-    // antimatterArray[i].update();
+    antimatterArray[i].draw();
+    antimatterArray[i].update();
   }
 
   // Draws circle
@@ -182,8 +192,13 @@ function drawPlayer() {
   ctx.arc(playerX, playerY, playerSize, 0, 2 * Math.PI, false);
   ctx.closePath();
 
+  // Create gradient
+  var grd = ctx.createRadialGradient(playerX, playerY, playerSize * .5, playerX, playerY, playerSize);
+  grd.addColorStop(.5,"#83AE9B");
+  grd.addColorStop(1,"white");
+
   // Colors the circle green
-  ctx.fillStyle = '#83AE9B';
+  ctx.fillStyle = grd;
   ctx.fill();
 
   // Remove bubble when player passes over
