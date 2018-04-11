@@ -122,8 +122,8 @@ for (var i = 0; i < 2; i++) {
   var ax = Math.random() * innerWidth;
   var ay = Math.random() * innerHeight;
   var aradius = 15;
-  var adx = (Math.random() - .5) * 20;
-  var ady = (Math.random() - .5) * 20;
+  var adx = (Math.random() - .5) * 10;
+  var ady = (Math.random() - .5) * 10;
   antimatterArray.push(new Antimatter(ax, ay, adx, ady, aradius));
 }
 
@@ -141,6 +141,7 @@ function setLoss() {
   if (antimatterArray.length == 1) {
     antimatterArray.push(new Antimatter(5000, 5000, 0, 0, 0));
     alert('You lose :[');
+    start();
   }
 }
 
