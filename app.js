@@ -19,15 +19,15 @@ window.addEventListener('resize', function() {
   canvas.height = window.innerHeight;
 });
 
+//// Sounds
+var music = new Audio("audio/02-cylinder-two.mp3");
+music.play();
 
 function start(){
 
 // Listens for keydown
 window.addEventListener("keydown", moveSomething, false);
 
-
-//// Sounds
-// var absorb = new Audio("file.wav");
 
 //// Render other bubbles
 
