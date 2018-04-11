@@ -19,6 +19,9 @@ window.addEventListener('resize', function() {
   canvas.height = window.innerHeight;
 });
 
+
+function start(){
+
 // Listens for keydown
 window.addEventListener("keydown", moveSomething, false);
 
@@ -186,8 +189,8 @@ function drawPlayer() {
 
   // Render and move red circles
   for (var i = 0; i < antimatterArray.length; i++) {
-    // antimatterArray[i].draw();
-    // antimatterArray[i].update();
+    antimatterArray[i].draw();
+    antimatterArray[i].update();
   }
 
   // Draws circle
@@ -224,7 +227,7 @@ function drawPlayer() {
 }
 
 drawPlayer();
-
+}
 
 //// How to play open/close
 /* Set the width of the side navigation to 250px */
