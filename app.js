@@ -23,6 +23,9 @@ window.addEventListener('resize', function() {
 window.addEventListener("keydown", moveSomething, false);
 
 
+//// Sounds
+// var absorb = new Audio("file.wav");
+
 //// Render other bubbles
 
 function Bubble(x, y, dx, dy, radius) {
@@ -183,8 +186,8 @@ function drawPlayer() {
 
   // Render and move red circles
   for (var i = 0; i < antimatterArray.length; i++) {
-    antimatterArray[i].draw();
-    antimatterArray[i].update();
+    // antimatterArray[i].draw();
+    // antimatterArray[i].update();
   }
 
   // Draws circle
@@ -221,3 +224,17 @@ function drawPlayer() {
 }
 
 drawPlayer();
+
+
+//// How to play open/close
+/* Set the width of the side navigation to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.height = "25%";
+    document.getElementById("mySidenav").style.borderTop = "1px solid white";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.height = "0";
+    document.getElementById("mySidenav").style.borderTop = "none";
+}

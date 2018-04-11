@@ -17,7 +17,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#" id="backgroundwhite">How To Play<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#" id="backgroundwhite"><span onclick="openNav()" onclick="togglePause()">How To Play</span><span class="sr-only">(current)</span></a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
@@ -47,6 +47,15 @@
     <canvas id="canvas">
 
     </canvas>
+
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <h2>Welcome to Fusion, the game.</h2>
+      <p>You are a <span id="hydrogen">hydrogen (H)</span> atom. Fuse with other H atoms to create larger elements.
+        Once you reach <span id="hydrogen">iron (Fe)</span> your star will go super nova and you win the game. Control your
+        atom with the arrow keys. Protip: Beware of <span id="antim">antimatter</span>! Most important: relax.
+      </p>
+    </div>
 
     <script type="text/javascript" src="app.js"></script>
   </body>
