@@ -133,14 +133,14 @@ for (var i = 0; i < 2; i++) {
 function checkWinner() {
   if (bubbleArray.length == 0) {
     bubbleArray.push(new Bubble(5000, 5000, 0, 0, 0));
-    alert('You win! Refresh the page to play again.');
+    alert('SUPERNOVA! You win! Refresh the page to play again.');
   }
 }
 
 function setLoss() {
   if (antimatterArray.length == 1) {
     antimatterArray.push(new Antimatter(5000, 5000, 0, 0, 0));
-    alert('You lose :[');
+    alert('Antimatter zapped you out of existence. You lose :[');
     start();
   }
 }
