@@ -2,16 +2,16 @@
 ![alt text](https://drive.google.com/open?id=1iwC5qqWNx5qmHHqZ74W9dTQKQ8WE1vgd "Bubbles")
 
 
-# Amoeba
+# Fusion - The Game
 ***
 
 ## Objective
 
-Absorb all other like-color bubbles to win the game. But watch out, as you absorb you grow!
+Absorb all other like-color circles to win the game. But watch out, as you absorb, you grow!
 
 ## Play the Game Here:
 
-http://#/
+http://spencercola-fusion-game.surge.sh
 
 ## Motivation
 
@@ -24,7 +24,7 @@ Create a relaxing game a user can play for a short amount of time to serve as a 
 
 ## Tech
 
-Built with HTML, CSS, and JavaScript.
+Built with HTML5 <canvas>, CSS3, and JavaScript.
 
 
 ### User Persona 1
@@ -117,7 +117,7 @@ Lives in Portland, OR.
 
 ### User Persona 3  
 ***  
-#### Becky Ovficepahrti
+#### Becky Corparti
 
 
 Age: 21
@@ -129,7 +129,7 @@ Lives in New York, NY.
 
 ##### Goals
 
--Wants to be CEO someday and always be sure to go the extra mile.
+-Wants to be CEO someday and to always go the extra mile.
 
 -Work hard, play hard.
 
@@ -176,11 +176,17 @@ As a user I should see my bubble grow as I absorb them.
 
 ..see all the bubbles moving at random.
 
-..see animations when my bubble absorbs others.
+..hear relaxing music playing.
+<!-- ..see animations when my bubble absorbs others. -->
 
-..see more bubbles as the difficulty progresses.
+..see bubbles that I need to avoid.
+<!-- ..see more bubbles as the difficulty progresses. -->
 
 ..see a beautiful UI.
+
+..see a start button.
+
+..have instructions on how to play the game in a collapsable menu.
 
 
 <!-- Objective

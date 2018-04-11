@@ -21,7 +21,7 @@ window.addEventListener('resize', function() {
 
 //// Sounds
 var music = new Audio("audio/02-cylinder-two.mp3");
-music.play();
+// music.play();
 
 function start(){
 
@@ -212,16 +212,16 @@ function drawPlayer() {
   for (var i = 0; i < bubbleArray.length; i++) {
     if (playerX + playerSize >= bubbleArray[i].x && playerX - playerSize <= bubbleArray[i].x
           && playerY + playerSize >= bubbleArray[i].y && playerY - playerSize <= bubbleArray[i].y) {
-          bubbleArray.splice(i, 1);
-          playerSize += 1;
+            bubbleArray.splice(i, 1);
+            playerSize += 1;
     }
   }
   // Set loss when player hits red circle
   for (var i = 0; i < antimatterArray.length; i++) {
     if (playerX + playerSize >= antimatterArray[i].ax && playerX - playerSize <= antimatterArray[i].ax
           && playerY + playerSize >= antimatterArray[i].ay && playerY - playerSize <= antimatterArray[i].ay) {
-          antimatterArray.splice(i, 1);
-          setLoss();
+            antimatterArray.splice(i, 1);
+            setLoss();
     }
   }
   checkWinner();
