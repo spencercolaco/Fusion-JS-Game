@@ -71,6 +71,7 @@ for (var i = 0; i < 100; i++) {
   var x = Math.random() * innerWidth;
   var y = Math.random() * innerHeight;
   var radius = 15;
+  // Add comment
   var dx = (Math.random() - .5) * 2;
   var dy = (Math.random() - .5) * 2;
   bubbleArray.push(new Bubble(x, y, dx, dy, radius));
@@ -81,6 +82,7 @@ for (var i = 0; i < 100; i++) {
 //// Render antimatter
 
 function Antimatter(ax, ay, adx, ady, aradius) {
+  //comment here
   this.ax = ax;
   this.ay = ay;
   this.adx = adx;
